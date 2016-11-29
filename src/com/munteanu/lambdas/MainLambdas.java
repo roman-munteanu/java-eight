@@ -11,7 +11,7 @@ import java.util.List;
 public class MainLambdas {
     public static void main(String[] args) {
 
-        List<String> names = Arrays.asList("Pieter Igel", "Thomas Mohme", "Tobias Thiele", "Carsten Hierche", "Karsten Pfeiffer", "Jessica Oeklers");
+        List<String> names = Arrays.asList("Roman Munteanu", "Pieter Igel", "Thomas Mohme", "Tobias Thiele", "Carsten Hierche", "Karsten Pfeiffer", "Jessica Oeklers");
         printList(names);
 
         /*
