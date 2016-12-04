@@ -1,7 +1,5 @@
 package com.munteanu.lambdabasics;
 
-import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
-
 /**
  * Created by romunteanu on 11/28/16.
  */
