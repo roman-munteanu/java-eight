@@ -7,9 +7,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
-import java.util.stream.IntStream;
-
-import static java.util.stream.Collectors.toList;
 
 /**
  * Created by romunteanu on 9/14/17.
@@ -19,14 +16,6 @@ public class MainExecutorServiceSample {
   private static final int NUMBER_OF_THREADS = 4;
 
   public static void main(String[] args) {
-
-    // Future<T> future = ConcurrentUtils.constantFuture(T myValue);
-
-    // Future future = CompletableFuture.completedFuture("Future value 1");
-
-//    List<Future<String>> futureList = IntStream.range(1,7).boxed()
-//      .map( (Integer n) -> CompletableFuture.completedFuture("Future value " + n))
-//      .collect(toList());
 
     final List<String> sites = Arrays.asList("https://www.google.com", "https://www.yandex.ru", "http://gemheap.herokuapp.com");
 
@@ -57,7 +46,7 @@ public class MainExecutorServiceSample {
     }
 
 
-    es.shutdown();
+    es.shutdownNow();
 
   }
 }
