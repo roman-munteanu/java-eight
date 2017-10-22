@@ -1,5 +1,6 @@
 package com.munteanu.future;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.stream.IntStream;
@@ -21,10 +22,16 @@ public class FutureExample {
 
     ExecutorService executor = Executors.newFixedThreadPool(1);
 
-    executor.submit(() -> {
-      TimeUnit.SECONDS.sleep(2);
-      return "Content";
-    });
+    List<Integer> numOfSeconds = Arrays.asList(2,5,4,7);
 
+    List<Future<String>> results = numOfSeconds.stream().map(n -> executor.submit(() -> {
+      TimeUnit.SECONDS.sleep(n);
+      System.out.println("Request " + n + " finished");
+      return "Content " + n;
+    })).collect(toList());
+
+    results.forEach(f -> System.out.println("isDone: " + f.isDone()));
+
+    executor.shutdown();
   }
 }
